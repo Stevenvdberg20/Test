@@ -1,0 +1,11 @@
+a, b = 0, 1
+while a < 1000:
+    print(f"The value of \"a\" equals {a}.")
+    a, b = b, a + b
+
+words = ["Steven", "Joon", "Lotte"]
+
+i = 1
+for name in words:
+    print(f"{name} is person {i} in Words.")
+    i = i+1

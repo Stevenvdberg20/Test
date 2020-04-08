@@ -1,0 +1,6 @@
+print(bool(""))
+name = input()
+if name:
+    print("Thanks g")
+else:
+    print("No name")
