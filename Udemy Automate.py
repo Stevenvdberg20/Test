@@ -1,4 +1,4 @@
-import pyperclip
+:import pyperclip
 
 print(bool(""))
 name = input()
@@ -16,3 +16,5 @@ for i in range(1, 6):
 
 pyperclip.copy("SKSJNAMOSIDFJ")
 print(pyperclip.paste())
+
+# Commit  vanuit visual studio code 19:07
