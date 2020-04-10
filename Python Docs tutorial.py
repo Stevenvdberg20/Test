@@ -22,3 +22,4 @@ for q, a in zip(questions, answers):
 
 # Nieuwe branch aangemaakt, kijken of committen nu wel lukt
 # Commit  vanuit visual studio code 19:07
+# Inclusief commit vanuit Pycharm? 19:15

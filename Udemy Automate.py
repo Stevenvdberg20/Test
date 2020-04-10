@@ -18,3 +18,4 @@ pyperclip.copy("SKSJNAMOSIDFJ")
 print(pyperclip.paste())
 
 # Commit  vanuit visual studio code 19:07
+# Inclusief commit vanuit Pycharm? 19:15
