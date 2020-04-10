@@ -19,18 +19,3 @@ print(pyperclip.paste())
 
 # Commit  vanuit visual studio code 19:07
 # Inclusief commit vanuit Pycharm? 19:15
-
-def ask_ok(prompt, retries=4, reminder='Please try again!'):
-    while True:
-        ok = input(prompt)
-        if ok in ('y', 'ye', 'yes'):
-            print("y, ye, or yes registered.")
-            return True
-        if ok in ('n', 'no', 'nop', 'nope'):
-            print("n, no, nop, or nope registered.")
-            return False
-        retries = retries - 1
-        if retries < 0:
-            print("No tries left, loop exited.")
-            raise ValueError('invalid user response')
-        print(reminder)
