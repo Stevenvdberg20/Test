@@ -60,6 +60,7 @@ def guessNum():
     correct_number = random.randint(1,10)
     guessed_number = 0
     try_number = 1
+
     while guessed_number != correct_number:
         try:
             print(f"Try #{try_number}. What is your guess?")
@@ -74,4 +75,18 @@ def guessNum():
             print("Please use numbers only.")
     print(f"Good job {player_name}, that is correct! You guessed right in {try_number} attempts.")
 
-guessNum()
+#guessNum()
+
+list_example = ["een", "twee", "drie", "vier"]
+print(list_example[-2]) # Negatieve index reversed de list, waar index -1 de laatste is, -2 een na laatste etc.
+print(list_example[0:2]) # Slices, zelfde als R
+list_example[1] = 2 # Type hoeft niet hetzelfde te zijn
+print(list_example)
+del list_example[1] # Verwijder item uit list
+print(list_example)
+print(list("Hello hi woohoo")) # Zet iedere letter in een item van een lijst
+print("vijf" in list_example) # Checkt of "vijf" in lijst list_example zit, en returnt T/F
+
+family = ["Pap", "Mam", "Joon", "Lotte", "Steven"]
+for person in range(len(family)):
+    print(f"We got {family[person]}.")
