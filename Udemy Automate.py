@@ -86,7 +86,15 @@ del list_example[1] # Verwijder item uit list
 print(list_example)
 print(list("Hello hi woohoo")) # Zet iedere letter in een item van een lijst
 print("vijf" in list_example) # Checkt of "vijf" in lijst list_example zit, en returnt T/F
+print(list_example.index("drie"))
 
 family = ["Pap", "Mam", "Joon", "Lotte", "Steven"]
 for person in range(len(family)):
     print(f"We got {family[person]}.")
+
+name = "Steve va de Berg"
+correct_name = name[:5] + "n van " + "den " + name[12:]
+print(correct_name)
+
+my_cat = {"size":"Fat", "Color":"Grey", "Disposition":"Loud"}
+print(my_cat["size"])
