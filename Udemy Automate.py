@@ -1,5 +1,6 @@
 import pyperclip
 import random
+import pprint
 
 print(bool("1"))
 name = input()
@@ -98,3 +99,30 @@ print(correct_name)
 
 my_cat = {"size":"Fat", "Color":"Grey", "Disposition":"Loud"}
 print(my_cat["size"])
+print(my_cat.values())
+print(my_cat.keys())
+print(my_cat.items())
+
+for i, j in my_cat.items():
+    print(i, j)
+
+participant = {"Name":"Steven", "Age":"24", "Gender":"Male"}
+characteristics = ("Name", "Job", "Age", "Gender", "Skincolor")
+print(participant)
+for c in characteristics:
+    if c not in participant:
+        participant.setdefault(c, f"Added {c} key through for-loop.") # de get function kan iets returnen als de key ontbreekt. In tegenstelling tot setdefault, die de key toevoegt met een standaard meegegeven waarde.
+print(participant)
+
+characteristics_new = ("Length", "Weight")
+for k in characteristics_new:
+    print(participant.get(k, "This key does not exists.")) # de get function kan iets returnen als de key ontbreekt. In tegenstelling tot setdefault, die de key toevoegt met een standaard meegegeven waarde.
+
+
+message = "Hoi ik ben steven en probeer nu te doen alsof ik dit zelf allemaal bedenk."
+count = {} # Lege dictionary maken
+for character in message.upper(): # Strings zijn soort van een list, dus je kan er doorheen loopen. Elke letter is 1 "list-item"
+    count.setdefault(character, 0) # Checkt of de letter al bekend is. Zo niet, dan voegt hij die letter toe aan de dictionary en geeft count = 0. Deze regel is essentieel, anders heeft de dictionary niet de key voor de letter.
+    count[character] += 1 # Count increment
+    print(character)
+pprint.pprint(count) # Module pprint maakt lange lijsten leesbaarder
