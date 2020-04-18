@@ -122,7 +122,49 @@ for k in characteristics_new:
 message = "Hoi ik ben steven en probeer nu te doen alsof ik dit zelf allemaal bedenk."
 count = {} # Lege dictionary maken
 for character in message.upper(): # Strings zijn soort van een list, dus je kan er doorheen loopen. Elke letter is 1 "list-item"
-    count.setdefault(character, 0) # Checkt of de letter al bekend is. Zo niet, dan voegt hij die letter toe aan de dictionary en geeft count = 0. Deze regel is essentieel, anders heeft de dictionary niet de key voor de letter.
+    count.setdefault(character, 0) # Checkt of de letter(key) al bekend is. Zo niet, dan voegt hij die letter toe aan de dictionary en geeft count = 0. Deze regel is essentieel, anders heeft de dictionary niet de key voor de letter.
     count[character] += 1 # Count increment
     print(character)
 pprint.pprint(count) # Module pprint maakt lange lijsten leesbaarder
+
+
+################ Practice Projects ################
+
+# Chapter 3 #
+
+def collatz(number):
+    if number % 2 == 0:
+        result = number//2
+    else:
+        result = 3*number+1
+    print(result)
+    return(result)
+
+def collatzCall():
+    while True:
+        try:
+            collatz_num = int(input()) # Input call moet BINNEN de try clause
+            temp_res = collatz(collatz_num)
+            if temp_res != 1:
+                print(f"{collatz_num} provided the result {temp_res}, which is not 1. Try again.")
+            else:
+                print(F"Using {collatz_num} the result is 1! Exiting function.")
+                break
+        except ValueError:
+            print("Type error, try again.")
+
+collatzCall()
+
+# Chapter 4 #
+
+groceries = ["Apples", "Bananas", "Oranges", "Mandarins", "Garlic"]
+def listToSentence(list):
+    result = ""
+    for i in range(len(groceries)):
+        if groceries[i] != groceries[-1]:
+            result = result + groceries[i] + ", "
+        else:
+            result = result + "and " + groceries[i] + "."
+    return(result)
+
+print(listToSentence(groceries))
