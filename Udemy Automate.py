@@ -168,3 +168,26 @@ def listToSentence(list):
     return(result)
 
 print(listToSentence(groceries))
+
+grid = [['.', '.', '.', '.', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['.', 'O', 'O', 'O', 'O', 'O'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.']]
+pprint.pprint(grid[1][1])
+
+def ox(ox_grid):
+    res_list = []
+    for i in range(2):
+        temp_list = []
+        for j in range(3):
+            temp_list.append(ox_grid[i][j])
+        res_list.append(temp_list)
+
+
+print(ox(grid))
+#print(len(grid))
