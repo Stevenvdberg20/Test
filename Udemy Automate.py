@@ -1,7 +1,7 @@
 import pyperclip
 import random
 import pprint
-
+"""
 print(bool("1"))
 name = input()
 if name:
@@ -154,7 +154,7 @@ def collatzCall():
             print("Type error, try again.")
 
 collatzCall()
-
+"""
 # Chapter 4 #
 
 groceries = ["Apples", "Bananas", "Oranges", "Mandarins", "Garlic"]
@@ -178,16 +178,55 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['O', 'O', 'O', 'O', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
-pprint.pprint(grid[1][1])
+pprint.pprint(grid[1][2]) # Lijsten volgen volgorde [row][column]
 
-def ox(ox_grid):
-    res_list = []
-    for i in range(2):
-        temp_list = []
-        for j in range(3):
-            temp_list.append(ox_grid[i][j])
-        res_list.append(temp_list)
+def ox():
+    fin_grid = []
+    for column in range(6): # Aantal columns
+        grid_column = []
+        for row in range(9):
+            grid_column.append(grid[row][column])
+        fin_grid.append(grid_column)
+    return fin_grid
 
+pprint.pprint(ox())
 
-print(ox(grid))
+def createGrid(columns, rows):
+    grid = []
+    for row in range(rows):
+        grid_row = []
+        for column in range(columns):            
+            grid_row.append(f"{row},{column}")
+        grid.append(grid_row)
+    return(grid)
+pprint.pprint(createGrid(3,7))
 #print(len(grid))
+
+# Chapter 5
+
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+def displayInventory(dict):
+    print("Inventory contains:")
+    inv_total = 0
+    for key in dict:
+        print(f"{key} : {dict[key]}")
+        inv_total += int(dict[key])
+    print(f"Total number of items = {inv_total}")
+
+displayInventory(inventory)
+
+def addToInventory(inventory, addedItems):
+    for item in addedItems:
+        if item not in inventory:
+            inventory.setdefault(item, 1)
+            print(f"Added new item to your inventory: {item}.")
+        else:
+            inventory[item] += 1
+            print(f"Gained 1 additional {item}.")
+        
+    return(inventory)
+
+inv = {'gold coin': 42, 'rope': 1}
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+inv = addToInventory(inv, dragon_loot)
+displayInventory(inv)
