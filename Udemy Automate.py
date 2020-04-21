@@ -1,6 +1,7 @@
 import pyperclip
 import random
 import pprint
+import zombiedice # Module kan je installeren door pip install naammodule te typn gewoon in VSC terminal
 """
 print(bool("1"))
 name = input()
@@ -230,3 +231,24 @@ inv = {'gold coin': 42, 'rope': 1}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 inv = addToInventory(inv, dragon_loot)
 displayInventory(inv)
+
+
+# Chapter 6
+print("Steven's \"'s morgen")
+print(r"Steven's \"'s morgen") #"Raw string" (die r voor de quotes) print alle symbolen uit, en negeert python syntax binnen de string
+
+def printTable(stringList):
+    col_width = [0] * len(stringList)
+    for i in range(len(stringList)):
+        for j in range(len(stringList[i])):
+            if stringList[i][j] > col_width[i]:
+                col_width[i] = stringList[i[j]]
+    print(col_width)
+
+
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+
+
+printTable(tableData)
