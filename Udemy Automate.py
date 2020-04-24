@@ -236,7 +236,7 @@ displayInventory(inv)
 # Chapter 6
 print("Steven's \"'s morgen")
 print(r"Steven's \"'s morgen") #"Raw string" (die r voor de quotes) print alle symbolen uit, en negeert python syntax binnen de string
-
+"""
 def printTable(stringList):
     col_width = [0] * len(stringList)
     for i in range(len(stringList)):
@@ -245,10 +245,41 @@ def printTable(stringList):
                 col_width[i] = stringList[i[j]]
     print(col_width)
 
-
 tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
              ['dogs', 'cats', 'moose', 'goose']]
 
 
 printTable(tableData)
+"""
+ex_dictionary = {"Naam":"Steven", "Leeftijd":"24", "Geslacht":"Man", "Woonplaats":"Zijderveld", "Bril":"Ja"}
+print(ex_dictionary)
+#ex_dictionary.setdefault("Persoon", "Persoon 1 toegevoegd")
+print(ex_dictionary)
+#print(ex_dictionary.get("Geslacht", "Geslacht niet gevonden"))
+print(ex_dictionary.values())
+def randomInputTest():
+    while True:
+        Naam = str(input("Vul hier je naam in."))
+        Leeftijd = str(input("Hoe oud ben je?"))
+        Geslacht = str(input("Wat is je geslacht?"))
+        Woonplaats = str(input("Waar woon je?"))
+        Bril = str(input("Heb je een bril?"))
+        Persoon = [Naam, Leeftijd, Geslacht, Woonplaats, Bril]
+        i = 0
+        for char in Persoon:
+            if char == ex_dictionary[i]:
+                i = i+1
+            else:
+                print("FOUT!")
+        if i == len(ex_dictionary)-1:
+            print("Persoon komt overeen!")
+            break
+        else:
+            print("Probeer opnieuw!")
+
+randomInputTest()
+#print(len(ex_dictionary)-1)
+#print(ex_dictionary["Bril"])
+#for item in ex_dictionary:
+#    print(f"{type(item)} en {item}")
