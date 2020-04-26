@@ -272,4 +272,14 @@ def randomInputTest(person_dictionary): # Functie die kijkt of de values uit de 
         else:
             print("Probeer opnieuw!")
 
-randomInputTest(ex_dictionary)
+#randomInputTest(ex_dictionary)
+
+def createDictionary(len_dict):
+    new_dict = {}
+    for i in range(len_dict):
+        k = input(f"Enter key for entry #{i+1}: ").capitalize()
+        v = input(f"Enter value: for entry #{i+1}: ").capitalize()
+        new_dict.setdefault(k, v)
+    return new_dict
+
+print(createDictionary(3))
