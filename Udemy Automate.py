@@ -2,6 +2,7 @@ import pyperclip
 import random
 import pprint
 import zombiedice # Module kan je installeren door pip install naammodule te typn gewoon in VSC terminal
+import re
 """
 print(bool("1"))
 name = input()
@@ -282,4 +283,31 @@ def createDictionary(len_dict):
         new_dict.setdefault(k, v)
     return new_dict
 
-print(createDictionary(3))
+#print(createDictionary(3))
+
+
+# Chapter 10 Regex
+
+messsage = "Bel me op vaste lijn in Amsterdam 020-0123456 of in Utrecht 1234567."
+phone_num_regex = re.compile(r"(\d\d\d-)?(\d\d\d\d\d\d\d)") # Haakjes eromheen voor groups maken (bijvoorbeeld landcode voor telefoonnummer scheiden)
+#phone_num_mo = phone_num_regex.search(messsage)
+#print(phone_num_mo.group())
+phone_num_mo = phone_num_regex.findall(messsage)
+print(phone_num_mo[0][1]) # Van lijst op index 0, neem item op index 1
+print(phone_num_mo)
+
+#bat_regex = re.compile(r"Bat(man|woman|mobile)")
+#bat_example = bat_regex.findall("Batman Batbat Batmobile")
+#print(bat_example)
+
+bat_regex1 = re.compile(r"Bat(wo)?man") # ? = het deel tussen haakjes (wo) moet 0 of 1 keer voorkomen.
+bat_regex2 = re.compile(r"Bat(wo)*man") # * = 0 of meer, dus letterlijk elke mogelijkheid
+bat_regex3 = re.compile(r"Bat(wo)+man") # + = 1 of meer keer voorkomen.
+mo1 = bat_regex1.search("The adventures of Batwoman and Batman")
+mo2 = bat_regex2.search("The adventures of Batwowowowowoman")
+mo3 = bat_regex3.search("The adventures of Batman")
+#print(mo3.group())
+
+phone_regex_multiple = re.compile(r"(\d\d\d\d-)?(\d\d\d\d\d\d)+(,)?")
+mo = phone_regex_multiple.findall("Nummers zijn 0123-123456, 654321 ik ben op elk nummer te bereiken.")
+print(mo)
