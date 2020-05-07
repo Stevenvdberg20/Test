@@ -319,3 +319,9 @@ print(os.path.relpath("C:\\Users\\steve\\Documents\\GitHub\\Test\\Udemy Automate
 print(os.path.dirname("C:\\Users\\steve\\Documents\\GitHub\\Test\\Udemy Automate.py")) # Print hele pad behalve bestandnaam
 print(os.path.basename("C:\\Users\\steve\\Documents\\GitHub\\Test\\Udemy Automate.py")) # Print bestandnaam
 #os.makedirs("") # Kan een nieuwe map aanmaken
+
+import shutil
+#print(os.getcwd())
+shutil.copy("C:\\Users\\steve\\Documents\\GitHub\\Test\\Walnut.txt", "C:\\Users\\steve\\Documents\\GitHub\\Test\\Walnut2.txt") # Kopieert de file naar een nieuwe locatie
+#shutil.copytree("C:\\Users\\steve\\Documents\\GitHub\\Test\\", "C:\\Users\\steve\\Documents\\GitHub\\Test\\Shutil test 07-05") # Kopieert een hele folder en de inhoud
+shutil.move("C:\\Users\\steve\\Documents\\GitHub\\Test\\Walnut2.txt", "C:\\Users\\steve\\Documents\\R\\WalnutMove.txt")
