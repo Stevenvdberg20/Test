@@ -1,8 +1,6 @@
 import pyperclip
 import random
 import pprint
-import zombiedice # Module kan je installeren door pip install naammodule te typn gewoon in VSC terminal
-import re
 """
 print(bool("1"))
 name = input()
@@ -287,7 +285,7 @@ def createDictionary(len_dict):
 
 
 # Chapter 10 Regex
-
+import re
 messsage = "Bel me op vaste lijn in Amsterdam 020-0123456 of in Utrecht 1234567."
 phone_num_regex = re.compile(r"(\d\d\d-)?(\d\d\d\d\d\d\d)") # Haakjes eromheen voor groups maken (bijvoorbeeld landcode voor telefoonnummer scheiden)
 #phone_num_mo = phone_num_regex.search(messsage)
@@ -311,3 +309,13 @@ mo3 = bat_regex3.search("The adventures of Batman")
 phone_regex_multiple = re.compile(r"(\d\d\d\d-)?(\d\d\d\d\d\d)+(,)?")
 mo = phone_regex_multiple.findall("Nummers zijn 0123-123456, 654321 ik ben op elk nummer te bereiken.")
 print(mo)
+
+# Section 11: Files
+import os
+print(os.getcwd())
+#os.chdir("C:\\") # Changing directory
+print(os.path.abspath("Python Docs tutorial.py"))
+print(os.path.relpath("C:\\Users\\steve\\Documents\\GitHub\\Test\\Udemy Automate.py", "C:\\Users\\steve")) # Controleert alleen paden TERUG, niet dieper
+print(os.path.dirname("C:\\Users\\steve\\Documents\\GitHub\\Test\\Udemy Automate.py")) # Print hele pad behalve bestandnaam
+print(os.path.basename("C:\\Users\\steve\\Documents\\GitHub\\Test\\Udemy Automate.py")) # Print bestandnaam
+#os.makedirs("") # Kan een nieuwe map aanmaken
