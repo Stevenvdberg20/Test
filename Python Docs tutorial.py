@@ -38,3 +38,5 @@ def ask_ok(prompt, retries=4, reminder='Please try again!'):
             print("No tries left, loop exited.")
             raise ValueError('invalid user response')
         print(reminder)
+
+ask_ok("Please type yes. ")
