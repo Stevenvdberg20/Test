@@ -271,7 +271,7 @@ def randomInputTest(person_dictionary): # Functie die kijkt of de values uit de 
         else:
             print("Probeer opnieuw!")
 
-#randomInputTest(ex_dictionary)
+randomInputTest(ex_dictionary)
 
 def createDictionary(len_dict):
     new_dict = {}
