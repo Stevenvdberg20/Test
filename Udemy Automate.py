@@ -271,7 +271,7 @@ def randomInputTest(person_dictionary): # Functie die kijkt of de values uit de 
         else:
             print("Probeer opnieuw!")
 
-randomInputTest(ex_dictionary)
+#randomInputTest(ex_dictionary)
 
 def createDictionary(len_dict):
     new_dict = {}
@@ -325,3 +325,45 @@ import shutil
 shutil.copy("C:\\Users\\steve\\Documents\\GitHub\\Test\\Walnut.txt", "C:\\Users\\steve\\Documents\\GitHub\\Test\\Walnut2.txt") # Kopieert de file naar een nieuwe locatie
 #shutil.copytree("C:\\Users\\steve\\Documents\\GitHub\\Test\\", "C:\\Users\\steve\\Documents\\GitHub\\Test\\Shutil test 07-05") # Kopieert een hele folder en de inhoud
 shutil.move("C:\\Users\\steve\\Documents\\GitHub\\Test\\Walnut2.txt", "C:\\Users\\steve\\Documents\\R\\WalnutMove.txt")
+
+# Section 12: Debugging
+
+
+def boxPrint(symbol, width, height):
+    if len(symbol) != 1:
+        raise Exception("Only use 1 symbol!")
+    if width < 1 or height < 2:
+        raise Exception("Please use width or height of 1 or higher.")
+    print(symbol * width)
+    for i in range(height - 2):
+        print(symbol + " " * (width - 2) + symbol)
+    print(symbol * width)
+
+boxPrint("*", 1, 1)
+
+import traceback
+def tracert():
+    try:
+        raise Exception("This is wrong!")
+    except:
+        errorFile = open("errorLog.txt", "a")
+        errorFile.write(traceback.format_exc())
+        errorFile.close()
+        print("The traceback info was written to errorLog.txt.")
+
+tracert()
+
+market_snd = {"ns":"green", "ew":"red"}
+def asserting(intersection):
+    for key in intersection.keys():
+        if intersection[key] == "green":
+            intersection[key] = "yellow"
+        elif intersection[key] == "red":
+            intersection[key] = "green"
+        elif intersection[key] == "yellow":
+            intersection[key] = "red"
+        assert "red" in intersection.values(), "Neither light is red!" + str(intersection)
+        
+print(market_snd)
+asserting(market_snd)
+print(market_snd)
