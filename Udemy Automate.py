@@ -1,6 +1,7 @@
 import pyperclip
 import random
 import pprint
+import os
 """
 print(bool("1"))
 name = input()
@@ -367,3 +368,23 @@ def asserting(intersection):
 print(market_snd)
 asserting(market_snd)
 print(market_snd)
+
+# Logging for debugging
+import logging
+#logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(filename="logging.txt", level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
+#logging.disable(logging.CRITICAL) # Disables logging up until the CRITICAL level, which is the highest level. So all logs disabled.
+
+logging.debug("Start of program")
+
+def factorial(n):
+    total = 1
+    n = n+1
+    logging.debug("Start of forloop")
+    for i in range(1, n):
+        total = total * i
+        logging.debug(f"i = {i} and total = {total}")
+    logging.debug(f"Total = {total}")
+    return total
+
+factorial(5)
